@@ -1,0 +1,126 @@
+:root {
+    --primary-accent: #ffb7b7;
+    --text-color: #5a5a5a;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+/* Background Animation */
+.bg-gradient-animate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #fff5f5, #ffe4e1, #fff0f0, #fce4ec);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Perfect Centering */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* The Glassmorphism Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 35px;
+    padding: 40px 30px;
+    max-width: 420px;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.script-title {
+    font-family: 'Dancing Script', cursive;
+    color: #d63384;
+    font-size: 2.2rem;
+}
+
+.bear-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.story-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: textFade 1.2s ease-out;
+}
+
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+.custom-action-btn {
+    background-color: #fff !important;
+    border: 1.5px solid var(--primary-accent) !important;
+    color: #e91e63 !important;
+    border-radius: 50px !important;
+    padding: 12px 20px !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.custom-action-btn:hover {
+    background-color: var(--primary-accent) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(255, 183, 183, 0.4);
+}
+
+.instruction-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #ff4d6d;
+    margin-top: 10px;
+}
+
+.heart-icon {
+    font-size: 1.5rem;
+    display: block;
+}
+
+/* Ensure mobile responsiveness */
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 30px 20px;
+    }
+    .script-title {
+        font-size: 1.8rem;
+    }
+}
